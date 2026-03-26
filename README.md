@@ -6,7 +6,7 @@
 A **fully animated** landing page for **Crunchy Bites Snacks** with **scroll-triggered chips packet opening animation** that reveals the website content! Features 3 delicious flavours with **image support**, **WhatsApp ordering**, and **data-driven design**.
 
 ## 🚀 Live Demo
-[View Live Demo](https://your-vercel-link.vercel.app) *(Deploy on Vercel in 60 seconds!)*
+[View Live Demo](https://crunchy-bites-chips.vercel.app/) *(Deploy on Vercel in 60 seconds!)*
 
 ## ✨ Features
 
