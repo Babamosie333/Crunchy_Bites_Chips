@@ -547,34 +547,29 @@
 const bgChips = document.getElementById("bgChips");
 const chipEmojis = ["🍟","🌽","🧂","🔥","⭐","✨"];
 
-// Split screen into 5 columns — 4 chips per column = 20 total
-const totalColumns = 5;
-const chipsPerColumn = 4;
+// remove old chips first (in case of re-run)
+bgChips.innerHTML = "";
 
-for (let col = 0; col < totalColumns; col++) {
-  for (let row = 0; row < chipsPerColumn; row++) {
-    const el = document.createElement("div");
-    el.className = "chip-float";
-    el.textContent = chipEmojis[Math.floor(Math.random() * chipEmojis.length)];
+const positions = [
+  [5,10],[18,35],[8,60],[12,85],      // column 1 (left)
+  [25,20],[30,50],[22,75],[28,90],    // column 2
+  [45,5],[50,30],[42,55],[48,80],     // column 3 (center)
+  [62,15],[68,40],[65,70],[70,88],    // column 4
+  [80,10],[85,35],[78,60],[90,82]     // column 5 (right)
+];
 
-    // Spread evenly across full width — each column gets 20% of screen
-    const colStart = col * 20;                          // 0, 20, 40, 60, 80
-    const leftPos = colStart + Math.random() * 18;      // random within that column
-    el.style.left = leftPos + "vw";
-
-    // Spread evenly across full height
-    const rowStart = row * 25;                          // 0, 25, 50, 75
-    const topPos = rowStart + Math.random() * 20;       // random within row
-    el.style.top = topPos + "vh";
-
-    el.style.animationDelay = Math.random() * 6 + "s";
-    el.style.animationDuration = (6 + Math.random() * 6) + "s";
-    el.style.fontSize = (1 + Math.random() * 2) + "rem";
-    el.style.opacity = (0.05 + Math.random() * 0.08).toString(); // vary opacity too
-
-    bgChips.appendChild(el);
-  }
-}
+positions.forEach(([left, top], i) => {
+  const el = document.createElement("div");
+  el.className = "chip-float";
+  el.textContent = chipEmojis[i % chipEmojis.length];
+  el.style.left = (left + Math.random() * 4) + "vw";
+  el.style.top = (top + Math.random() * 4) + "vh";
+  el.style.animationDelay = (Math.random() * 6) + "s";
+  el.style.animationDuration = (6 + Math.random() * 5) + "s";
+  el.style.fontSize = (1.2 + Math.random() * 1.5) + "rem";
+  el.style.opacity = (0.06 + Math.random() * 0.07).toString();
+  bgChips.appendChild(el);
+});
 
 
     // ===== GSAP =====
