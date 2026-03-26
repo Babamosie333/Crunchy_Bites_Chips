@@ -4,6 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title id="page-title">Crunchy Bites Snacks</title>
+
+  <!-- ===== OPENGRAPH META TAGS ===== -->
+  <meta property="og:title" content="Crunchy Bites Snacks - Taste the real crunch."/>
+  <meta property="og:description" content="Premium crunchy chips in 3 flavours: Classic Salted, Spicy Masala and Chilli Chatka. Buy 3 Get 1 Free! Order now at just ₹59."/>
+  <meta property="og:image" content="./og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:url" content="https://crunchy-bites-snacks.vercel.app"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Crunchy Bites Snacks"/>
+
+  <!-- ===== TWITTER CARD META TAGS ===== -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Crunchy Bites Snacks - Taste the real crunch."/>
+  <meta name="twitter:description" content="Premium crunchy chips in 3 flavours. Buy 3 Get 1 Free! Just ₹59."/>
+  <meta name="twitter:image" content="./og-image.jpg"/>
+
+  <!-- ===== SEO META TAGS ===== -->
+  <meta name="description" content="Crunchy Bites Snacks - Premium crunchy chips in Classic Salted, Spicy Masala, Chilli Chatka. Buy 3 Get 1 Free at ₹59 per pack. Order in Kanpur."/>
+  <meta name="keywords" content="crunchy chips, snacks, chips kanpur, classic salted, spicy masala, chilli chatka, crunchy bites"/>
+  <meta name="author" content="Babamosie333"/>
+  <meta name="theme-color" content="#FF6B35"/>
+
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -241,12 +264,16 @@
     footer .divider { border: none; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px 0; }
     footer .copy { opacity: 0.75; font-size: 0.85rem; margin-bottom: 6px; }
     footer .made-by { font-size: 0.8rem; opacity: 0.6; }
-    footer .made-by span { font-weight: 800; opacity: 1; color: #FFD700; }
+    footer .made-by a { font-weight: 800; color: #FFD700; text-decoration: none; opacity: 1; }
+    footer .made-by a:hover { text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .product-img-box { width: 200px; height: 200px; font-size: 5rem; }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Floating background chips -->
   <div class="bg-chips" id="bgChips"></div>
 
   <!-- NAVBAR -->
@@ -277,16 +304,13 @@
   <div id="packet-scene">
     <div class="packet-sticky">
       <div class="packet-container" id="packetContainer">
-
         <div class="pkt-content-out" id="pktOut">
           <div class="mini-chips">🍟</div>
           <p id="pkt-offer-text">Buy 3 Get 1 Free!</p>
         </div>
-
         <div class="pkt-top" id="pktTop">
           <div class="pkt-top-text" id="pkt-top-brand">Crunchy Bites<br/>Snacks</div>
         </div>
-
         <div class="pkt-body">
           <div class="pkt-shine"></div>
           <div class="pkt-body-text">
@@ -295,7 +319,6 @@
             <p id="pkt-price" style="font-size:1.2rem;font-weight:800;margin-top:8px;">₹59</p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
@@ -303,10 +326,7 @@
   <!-- PRODUCT SECTION -->
   <section id="product">
     <h2 class="section-title">🍟 Choose Your Flavour</h2>
-
-    <!-- Flavour Tabs injected by JS -->
     <div class="flavour-tabs" id="flavourTabs"></div>
-
     <div class="product-card" id="productCard">
       <div class="product-img-box" id="prod-img-box">
         <span id="prod-emoji">🍟</span>
@@ -318,7 +338,7 @@
         <h2 id="prod-name">Classic Salted Chips</h2>
         <p class="weight" id="prod-weight">Net Weight: 100gm</p>
         <div class="price" id="prod-price">₹59 <span>per pack</span></div>
-        <p class="desc" id="prod-desc">Made with real ingredients, packed with maximum crunch in every single bite. Once you open it — you can't stop!</p>
+        <p class="desc" id="prod-desc">Made with real ingredients, packed with maximum crunch in every single bite.</p>
         <p class="flavor-badge-text" id="prod-flavor-badge"></p>
         <a href="#contact" class="order-btn">Place Order 📦</a>
       </div>
@@ -342,7 +362,7 @@
       <div class="feature-card">
         <div class="icon">💰</div>
         <h3>Best Value</h3>
-        <p>Premium quality at just ₹59. And with our Buy 3 Get 1 Free offer, it's even better!</p>
+        <p>Premium quality at just ₹59. And with our Buy 3 Get 1 Free offer, it gets even better!</p>
       </div>
     </div>
   </section>
@@ -360,7 +380,6 @@
   <section id="contact">
     <h2 class="section-title">📦 Place Your Order</h2>
     <div class="contact-grid">
-
       <div class="contact-info">
         <h3>Find Us</h3>
         <div class="info-item">
@@ -380,7 +399,6 @@
           <p>Open Daily: 9 AM – 9 PM</p>
         </div>
       </div>
-
       <div class="order-form">
         <h3>Order Form</h3>
         <form onsubmit="handleOrder(event)">
@@ -411,7 +429,6 @@
           <button type="submit" class="submit-btn">Place Order via WhatsApp 🚀</button>
         </form>
       </div>
-
     </div>
   </section>
 
@@ -428,13 +445,18 @@
     </div>
     <hr class="divider"/>
     <p class="copy" id="footer-copy">© 2026 Crunchy Bites Snacks. All rights reserved.</p>
-    <p class="made-by">Website made by <a href="https://github.com/Babamosie333" target="_blank" id="footer-madeby" style="color:#FFD700; font-weight:800; text-decoration:none; opacity:1;">Babamosie333</a> 💻</p>
-
+    <p class="made-by">Website made by
+      <a href="https://github.com/Babamosie333" target="_blank" id="footer-madeby">Babamosie333</a> 💻
+    </p>
   </footer>
 
   <script>
     // ===== INJECT CONFIG DATA =====
     document.getElementById("page-title").textContent = CONFIG.brand;
+    document.querySelector('meta[property="og:title"]').content = CONFIG.brand + " - " + CONFIG.tagline;
+    document.querySelector('meta[property="og:description"]').content = CONFIG.description;
+    document.querySelector('meta[name="twitter:title"]').content = CONFIG.brand + " - " + CONFIG.tagline;
+    document.querySelector('meta[name="twitter:description"]').content = CONFIG.description;
     document.getElementById("nav-brand").textContent = "🍟 " + CONFIG.brand;
     document.getElementById("hero-title").textContent = CONFIG.brand;
     document.getElementById("hero-tagline").textContent = CONFIG.tagline;
@@ -457,6 +479,7 @@
     document.getElementById("footer-tagline").textContent = CONFIG.tagline;
     document.getElementById("footer-copy").textContent = "© " + CONFIG.year + " " + CONFIG.brand + ". All rights reserved.";
     document.getElementById("footer-madeby").textContent = CONFIG.madeBy;
+    document.getElementById("footer-madeby").href = "https://github.com/" + CONFIG.madeBy;
 
     // ===== FLAVOUR VARIANT LOGIC =====
     const flavourTabsContainer = document.getElementById("flavourTabs");
@@ -477,24 +500,19 @@
     function selectFlavour(id) {
       const prod = CONFIG.products.find(p => p.id === id);
       if (!prod) return;
-
       document.querySelectorAll(".flavour-tab-btn").forEach(b => b.classList.remove("active"));
       const activeBtn = document.querySelector(`.flavour-tab-btn[data-id="${id}"]`);
       if (activeBtn) activeBtn.classList.add("active");
-
       prodNameEl.textContent = prod.name + " Chips";
       prodFlavorBadgeEl.textContent = prod.badge;
-
       const fflavourSelect = document.getElementById("fflavour");
       if (fflavourSelect) {
         for (let i = 0; i < fflavourSelect.options.length; i++) {
           if (fflavourSelect.options[i].value === prod.flavor) {
-            fflavourSelect.selectedIndex = i;
-            break;
+            fflavourSelect.selectedIndex = i; break;
           }
         }
       }
-
       if (prod.img && prod.img.trim() !== "") {
         prodImgEl.src = prod.img;
         prodImgEl.style.display = "block";
@@ -504,13 +522,10 @@
         prodEmojiEl.style.display = "block";
         prodImgEl.style.display = "none";
       }
-
       gsap.from("#productCard", { scale: 0.96, duration: 0.25, ease: "power2.out" });
     }
 
-    if (CONFIG.products && CONFIG.products.length > 0) {
-      selectFlavour(CONFIG.products[0].id);
-    }
+    if (CONFIG.products && CONFIG.products.length > 0) selectFlavour(CONFIG.products[0].id);
 
     // ===== FLOATING BACKGROUND CHIPS =====
     const bgChips = document.getElementById("bgChips");
@@ -531,14 +546,8 @@
     gsap.registerPlugin(ScrollTrigger);
 
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#packet-scene",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1.5,
-      }
+      scrollTrigger: { trigger: "#packet-scene", start: "top top", end: "bottom bottom", scrub: 1.5 }
     });
-
     tl.to("#pktTop", { rotateX: -140, transformOrigin: "bottom center", duration: 1, ease: "power2.inOut" });
     tl.to("#pktOut", { scaleY: 1, opacity: 1, y: -120, duration: 1, ease: "back.out(1.7)" }, "-=0.3");
     tl.to("#packetContainer", { scale: 1.15, rotation: -3, duration: 0.3, ease: "power1.out" })
