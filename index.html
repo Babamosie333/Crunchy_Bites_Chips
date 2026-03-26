@@ -527,20 +527,39 @@
 
     if (CONFIG.products && CONFIG.products.length > 0) selectFlavour(CONFIG.products[0].id);
 
-    // ===== FLOATING BACKGROUND CHIPS =====
-    const bgChips = document.getElementById("bgChips");
-    const chipEmojis = ["🍟","🌽","🧂","🔥","⭐","✨"];
-    for (let i = 0; i < 20; i++) {
-      const el = document.createElement("div");
-      el.className = "chip-float";
-      el.textContent = chipEmojis[Math.floor(Math.random() * chipEmojis.length)];
-      el.style.left = Math.random() * 100 + "vw";
-      el.style.top = Math.random() * 100 + "vh";
-      el.style.animationDelay = Math.random() * 6 + "s";
-      el.style.animationDuration = (6 + Math.random() * 6) + "s";
-      el.style.fontSize = (1 + Math.random() * 2) + "rem";
-      bgChips.appendChild(el);
-    }
+// ===== FLOATING BACKGROUND CHIPS =====
+const bgChips = document.getElementById("bgChips");
+const chipEmojis = ["🍟","🌽","🧂","🔥","⭐","✨"];
+
+// Split screen into 5 columns — 4 chips per column = 20 total
+const totalColumns = 5;
+const chipsPerColumn = 4;
+
+for (let col = 0; col < totalColumns; col++) {
+  for (let row = 0; row < chipsPerColumn; row++) {
+    const el = document.createElement("div");
+    el.className = "chip-float";
+    el.textContent = chipEmojis[Math.floor(Math.random() * chipEmojis.length)];
+
+    // Spread evenly across full width — each column gets 20% of screen
+    const colStart = col * 20;                          // 0, 20, 40, 60, 80
+    const leftPos = colStart + Math.random() * 18;      // random within that column
+    el.style.left = leftPos + "vw";
+
+    // Spread evenly across full height
+    const rowStart = row * 25;                          // 0, 25, 50, 75
+    const topPos = rowStart + Math.random() * 20;       // random within row
+    el.style.top = topPos + "vh";
+
+    el.style.animationDelay = Math.random() * 6 + "s";
+    el.style.animationDuration = (6 + Math.random() * 6) + "s";
+    el.style.fontSize = (1 + Math.random() * 2) + "rem";
+    el.style.opacity = (0.05 + Math.random() * 0.08).toString(); // vary opacity too
+
+    bgChips.appendChild(el);
+  }
+}
+
 
     // ===== GSAP =====
     gsap.registerPlugin(ScrollTrigger);
