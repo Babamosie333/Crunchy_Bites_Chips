@@ -38,7 +38,6 @@
     html { scroll-behavior: smooth; }
     body { font-family: "Nunito", sans-serif; background: #FFFBF0; color: #333; overflow-x: hidden; }
 
-    /* FLOATING BG */
     .bg-chips { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 0; overflow: visible; }
     .chip-float { position: fixed; font-size: 2rem; opacity: 0.08; animation: floatChip 8s infinite ease-in-out; z-index: 0; pointer-events: none; }
     @keyframes floatChip {
@@ -46,7 +45,6 @@
       50% { transform: translateY(-30px) rotate(20deg); }
     }
 
-    /* NAVBAR */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       padding: 12px 30px; display: flex; align-items: center; justify-content: space-between;
@@ -60,7 +58,6 @@
     .nav-links a:hover { color: #FF6B35; }
     @media (max-width: 600px) { .nav-links { display: none; } }
 
-    /* HERO */
     #hero {
       position: relative; height: 100vh; display: flex; flex-direction: column;
       align-items: center; justify-content: center;
@@ -68,8 +65,6 @@
       overflow: hidden; z-index: 1;
     }
     .hero-text { text-align: center; z-index: 10; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; }
-
-    /* HERO LOGO */
     #hero-logo {
       width: 170px; height: auto; margin-bottom: 12px;
       filter: drop-shadow(0 6px 20px rgba(0,0,0,0.3));
@@ -79,7 +74,6 @@
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-10px); }
     }
-
     .hero-text h1 {
       font-family: "Fredoka One", cursive; font-size: clamp(2.5rem, 6vw, 5rem);
       color: white; text-shadow: 3px 3px 0 #c45000; letter-spacing: 1px;
@@ -94,8 +88,8 @@
     }
     .cta-btn:hover { background: #FFD700; color: #c45000; }
     @keyframes pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
-      50% { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
     .scroll-hint {
       position: absolute; bottom: 40px; left: 50%;
@@ -109,7 +103,6 @@
       50% { transform: translateX(-50%) translateY(-10px); }
     }
 
-    /* PACKET SCENE */
     #packet-scene { position: relative; height: 400vh; background: linear-gradient(180deg, #FF6B35 0%, #FFD700 100%); }
     .packet-sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .packet-container { position: relative; width: 280px; height: 380px; }
@@ -147,14 +140,12 @@
     @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
     .pkt-content-out p { font-weight: 700; color: #FF6B35; margin-top: 8px; font-size: 0.9rem; }
 
-    /* SECTIONS */
     section { position: relative; z-index: 1; padding: 80px 20px; }
     .section-title {
       font-family: "Fredoka One", cursive; font-size: clamp(1.8rem, 4vw, 3rem);
       text-align: center; color: #FF6B35; margin-bottom: 50px; text-shadow: 2px 2px 0 #FFD700;
     }
 
-    /* FLAVOUR TABS */
     .flavour-tabs { max-width: 900px; margin: 0 auto 30px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
     .flavour-tab-btn {
       border: 2px solid #FF6B35; background: #FFF9E6; color: #c45000;
@@ -165,7 +156,6 @@
     .flavour-tab-btn:hover { transform: translateY(-2px); }
     .flavour-tab-btn.active { background: #FF6B35; color: white; }
 
-    /* PRODUCT */
     #product { background: white; }
     .product-card { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px; justify-content: center; }
     .product-img-box {
@@ -199,7 +189,6 @@
     }
     .order-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,107,53,0.5); }
 
-    /* FEATURES */
     #features { background: linear-gradient(135deg, #FFF9E6, #FFF3CC); }
     .features-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; max-width: 900px; margin: 0 auto; }
     .feature-card {
@@ -212,13 +201,11 @@
     .feature-card h3 { font-family: "Fredoka One", cursive; font-size: 1.3rem; color: #FF6B35; margin-bottom: 8px; }
     .feature-card p { color: #777; line-height: 1.6; font-size: 0.95rem; }
 
-    /* OFFER */
     #offer { background: linear-gradient(135deg, #FF6B35, #FFD700); text-align: center; padding: 80px 20px; }
     #offer h2 { font-family: "Fredoka One", cursive; font-size: clamp(2rem, 5vw, 4rem); color: white; text-shadow: 3px 3px 0 rgba(0,0,0,0.2); margin-bottom: 20px; }
     #offer p { font-size: 1.2rem; color: rgba(255,255,255,0.9); font-weight: 700; margin-bottom: 30px; }
     .offer-emojis { font-size: 3rem; letter-spacing: 10px; animation: bounce 1.5s infinite; }
 
-    /* CONTACT */
     #contact { background: white; }
     .contact-grid { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; }
     .contact-info { flex: 1; min-width: 260px; }
@@ -250,7 +237,15 @@
     }
     .submit-btn:hover { transform: translateY(-3px); }
 
-    /* FOOTER */
+    /* ===== PAYMENT RADIO ===== */
+    input[type="radio"] { display: none; }
+    input[type="radio"]:checked + span {
+      background: linear-gradient(135deg, #FF6B35, #FFD700) !important;
+      color: white !important;
+      border-color: #FF6B35 !important;
+      box-shadow: 0 4px 15px rgba(255,107,53,0.3);
+    }
+
     footer { background: linear-gradient(135deg, #c45000, #FF6B35); color: white; text-align: center; padding: 50px 20px 30px; }
     .footer-logo { width: 80px; height: auto; margin: 0 auto 10px; display: block; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2)); }
     footer h3 { font-family: "Fredoka One", cursive; font-size: 2rem; margin-bottom: 6px; }
@@ -292,7 +287,6 @@
   <!-- HERO -->
   <section id="hero">
     <div class="hero-text">
-      <!-- 🏷️ LOGO ABOVE TITLE -->
       <img src="./logo.png" alt="Crunchy Bites Logo" id="hero-logo" onerror="this.style.display='none'"/>
       <h1 id="hero-title">Crunchy Bites Snacks</h1>
       <p id="hero-tagline">Taste the real crunch.</p>
@@ -304,7 +298,7 @@
     </div>
   </section>
 
-  <!-- PACKET OPENING SCENE -->
+  <!-- PACKET SCENE -->
   <div id="packet-scene">
     <div class="packet-sticky">
       <div class="packet-container" id="packetContainer">
@@ -353,21 +347,9 @@
   <section id="features">
     <h2 class="section-title">Why Choose Us? 💛</h2>
     <div class="features-grid">
-      <div class="feature-card">
-        <div class="icon">🌽</div>
-        <h3>Real Ingredients</h3>
-        <p>Made with 100% natural corn and spices. No artificial junk, just pure crunch.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">💥</div>
-        <h3>Maximum Crunch</h3>
-        <p>Every bite hits different. Our special recipe ensures that satisfying CRUNCH every time.</p>
-      </div>
-      <div class="feature-card">
-        <div class="icon">💰</div>
-        <h3>Best Value</h3>
-        <p>Premium quality at just Rs 59. And with our Buy 3 Get 1 Free offer, it gets even better!</p>
-      </div>
+      <div class="feature-card"><div class="icon">🌽</div><h3>Real Ingredients</h3><p>Made with 100% natural corn and spices. No artificial junk, just pure crunch.</p></div>
+      <div class="feature-card"><div class="icon">💥</div><h3>Maximum Crunch</h3><p>Every bite hits different. Our special recipe ensures that satisfying CRUNCH every time.</p></div>
+      <div class="feature-card"><div class="icon">💰</div><h3>Best Value</h3><p>Premium quality at just Rs 59. And with our Buy 3 Get 1 Free offer, it gets even better!</p></div>
     </div>
   </section>
 
@@ -406,7 +388,6 @@
             <input type="tel" placeholder="Enter phone number *" required id="fphone"/>
           </div>
 
-          <!-- FLAVOUR -->
           <div class="form-group">
             <label>🌶️ Choose Flavour</label>
             <select id="fflavour">
@@ -416,7 +397,6 @@
             </select>
           </div>
 
-          <!-- MIX -->
           <div class="form-group">
             <label>🎁 Mix Flavours? (Optional)</label>
             <select id="fmix">
@@ -428,7 +408,6 @@
             </select>
           </div>
 
-          <!-- PACK SIZE -->
           <div class="form-group">
             <label>📦 Choose Pack Size</label>
             <select id="fqty">
@@ -440,6 +419,32 @@
               <option value="6">6 Packs — Rs 354 (Get 2 FREE 🎉)</option>
               <option value="10">10 Packs — Rs 590 (Get 3 FREE 🎉)</option>
             </select>
+          </div>
+
+          <!-- ===== 💳 PAYMENT METHOD ===== -->
+          <div class="form-group">
+            <label>💳 Payment Method</label>
+            <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:4px;">
+
+              <label style="flex:1; min-width:120px; cursor:pointer;">
+                <input type="radio" name="payment" value="Cash on Delivery" id="pay-cod" checked/>
+                <span style="display:inline-flex; align-items:center; gap:6px; background:#FFF9E6;
+                  border:2px solid #FFE066; border-radius:12px; padding:12px 16px; font-weight:700;
+                  color:#c45000; font-size:0.95rem; width:100%; justify-content:center; transition:all 0.2s;">
+                  💵 Cash on Delivery
+                </span>
+              </label>
+
+              <label style="flex:1; min-width:120px; cursor:pointer;">
+                <input type="radio" name="payment" value="Online Payment (UPI/QR)" id="pay-online"/>
+                <span style="display:inline-flex; align-items:center; gap:6px; background:#FFF9E6;
+                  border:2px solid #FFE066; border-radius:12px; padding:12px 16px; font-weight:700;
+                  color:#c45000; font-size:0.95rem; width:100%; justify-content:center; transition:all 0.2s;">
+                  📱 Online (UPI/QR)
+                </span>
+              </label>
+
+            </div>
           </div>
 
           <div class="form-group">
@@ -600,11 +605,14 @@
       const mix = document.getElementById("fmix").value;
       const address = document.getElementById("faddress").value;
       const mixText = mix === "Same flavour" ? flavour : mix;
+      const payment = document.querySelector('input[name="payment"]:checked').value;
+      const payIcon = payment === "Cash on Delivery" ? "%F0%9F%92%B5" : "%F0%9F%93%B1";
       const msg = "Hello! I want to order from " + CONFIG.brand + "!%0A%0A"
         + "%F0%9F%91%A4 Name: " + name + "%0A"
         + "%F0%9F%93%9E Phone: " + phone + "%0A"
         + "%F0%9F%8C%B6%EF%B8%8F Flavour: " + mixText + "%0A"
         + "%F0%9F%93%A6 Order: " + qty + "%0A"
+        + payIcon + " Payment: " + payment + "%0A"
         + "%F0%9F%93%8D Address: " + address + "%0A%0A"
         + CONFIG.offer;
       window.open("https://wa.me/91" + CONFIG.phone + "?text=" + msg, "_blank");
